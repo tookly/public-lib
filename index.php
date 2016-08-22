@@ -9,4 +9,6 @@ echo "another conflicts";
 
 echo "conflits";
 
-echo "fix bug"
+echo "fix bug ";
+
+echo "bug fixed"
