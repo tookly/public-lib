@@ -4,6 +4,8 @@
 echo phpinfo();
 
 //ddd
-echo "test commit"
+echo "test commit";
 
-echo "create a new branch"
+echo "create a new branch";
+
+echo "conflits";
