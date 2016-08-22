@@ -8,3 +8,5 @@ echo "create a new branch";
 echo "another conflicts";
 
 echo "conflits";
+
+echo "fix bug"
