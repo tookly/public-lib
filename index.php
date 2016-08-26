@@ -9,6 +9,10 @@ echo "another conflicts";
 
 echo "conflits";
 
+<<<<<<< Updated upstream
 echo "fix bug ";
 
 echo "bug fixed"
+=======
+echo "sth wrong";
+>>>>>>> Stashed changes
