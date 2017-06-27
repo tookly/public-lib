@@ -11,5 +11,5 @@ namespace Rank;
 interface RankIBase
 {
     public function subject($uid);
-    public function room($uid, $categoryId, $owid);
+    
 }

@@ -15,7 +15,7 @@ class RankFactory {
 
     private static $active = null;
 
-    public static function creatAvtivity($activity = 'base', $dev = false)
+    public static function creatAvtivity($activity = 'base')
     {
         $activity = strtolower($activity);
 
@@ -24,7 +24,7 @@ class RankFactory {
         }
 
         try {
-            return call_user_func(array(RankBaseOnConfig::class, 'getInstance'), $activity, $dev);
+            return call_user_func(array(RankBaseOnConfig::class, 'getInstance'), $activity);
         } catch (\Exception $e) {
             Log::info('传入参数无效');
             return new RankBase;

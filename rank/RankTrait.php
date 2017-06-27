@@ -24,9 +24,9 @@ trait RankTrait
         return $key = $key.":".$uid;
     }
 
-    public static function getUserKeysByConf($attr, $config, $owid = 0, $categoryId = 0)
+    public static function getUserKeysByConf($attr, $config, $uid = 0, $categoryId = 0)
     {
-        return self::getBaseKeysByConf('HASH', $attr, $config, $owid, $categoryId);
+        return self::getBaseKeysByConf('HASH', $attr, $config, $uid, $categoryId);
     }
 
     public static function getCacheKey($attr, $config, ...$args)
@@ -34,9 +34,9 @@ trait RankTrait
         return self::getBaseKey('rank', $attr, $config, ...$args);
     }
 
-    public static function getCacheKeysByConf($attr, $config, $owid = 0, $categoryId = 0)
+    public static function getCacheKeysByConf($attr, $config, $uid = 0, $categoryId = 0)
     {
-        return self::getBaseKeysByConf('rank', $attr, $config, $owid, $categoryId);
+        return self::getBaseKeysByConf('rank', $attr, $config, $uid, $categoryId);
     }
 
     public static function getKey($attr, $config, ...$args)
@@ -44,9 +44,9 @@ trait RankTrait
         return self::getBaseKey('zset', $attr, $config, ...$args);
     }
 
-    public static function getKeysByConf($attr, $config, $owid = 0, $categoryId = 0)
+    public static function getKeysByConf($attr, $config, $uid = 0, $categoryId = 0)
     {
-        return self::getBaseKeysByConf('zset', $attr, $config, $owid, $categoryId);
+        return self::getBaseKeysByConf('zset', $attr, $config, $uid, $categoryId);
     }
 
     /**
@@ -82,12 +82,12 @@ trait RankTrait
      * @param $logo
      * @param $attr
      * @param $config
-     * @param $owid
+     * @param $uid
      * @param $categoryId
      *
      * @return array
      */
-    public static function getBaseKeysByConf($logo, $attr, $config, $owid = 0, $categoryId = 0)
+    public static function getBaseKeysByConf($logo, $attr, $config, $uid = 0, $categoryId = 0)
     {
         $keys = [];
         if(empty($config['activity']) || empty($config['ranks'][$attr])) {
@@ -109,8 +109,8 @@ trait RankTrait
             }
 
             //增加主播维度
-            if(isset($item['owid']) && $item['owid'] === true) {
-                $prefix = $oldPrefix.":".$owid;
+            if(isset($item['uid']) && $item['uid'] === true) {
+                $prefix = $oldPrefix.":".$uid;
             }
 
             foreach ($item['date'] as $date) {
